@@ -1177,6 +1177,12 @@ body {
     .kpi-card { padding: 18px; }
     .kpi-value { font-size: 1.35rem; }
 
+    .charts-grid { gap: 14px; }
+    .chart-container { padding: 14px; }
+    .chart-container canvas { height: 200px !important; }
+    .chart-header { margin-bottom: 14px; }
+    .chart-header h3 { font-size: 0.88rem; }
+
     .team-grid { grid-template-columns: 1fr; }
     .team-card { padding: 24px 18px; }
 

@@ -153,6 +153,8 @@ var chartColors = {
     textBright: 'rgba(255, 255, 255, 0.9)'
 };
 
+var isMobile = window.innerWidth <= 480;
+
 var defaultOptions = {
     responsive: true,
     maintainAspectRatio: false,
@@ -160,10 +162,10 @@ var defaultOptions = {
         legend: {
             labels: {
                 color: chartColors.text,
-                font: { family: 'Inter', size: 12 },
-                padding: 20,
+                font: { family: 'Inter', size: isMobile ? 10 : 12 },
+                padding: isMobile ? 10 : 20,
                 usePointStyle: true,
-                pointStyleWidth: 10
+                pointStyleWidth: isMobile ? 8 : 10
             }
         },
         tooltip: {
@@ -182,11 +184,11 @@ var defaultOptions = {
     scales: {
         x: {
             grid: { color: chartColors.grid },
-            ticks: { color: chartColors.text, font: { family: 'Inter', size: 11 } }
+            ticks: { color: chartColors.text, font: { family: 'Inter', size: isMobile ? 9 : 11 }, maxRotation: isMobile ? 45 : 0 }
         },
         y: {
             grid: { color: chartColors.grid },
-            ticks: { color: chartColors.text, font: { family: 'Inter', size: 11 } }
+            ticks: { color: chartColors.text, font: { family: 'Inter', size: isMobile ? 9 : 11 } }
         }
     }
 };
@@ -388,8 +390,8 @@ function createCostsChart() {
             responsive: true, maintainAspectRatio: false, cutout: '65%',
             plugins: {
                 legend: {
-                    position: 'right',
-                    labels: { color: chartColors.text, font: { family: 'Inter', size: 12 }, padding: 16, usePointStyle: true, pointStyleWidth: 10 }
+                    position: isMobile ? 'bottom' : 'right',
+                    labels: { color: chartColors.text, font: { family: 'Inter', size: isMobile ? 10 : 12 }, padding: isMobile ? 10 : 16, usePointStyle: true, pointStyleWidth: isMobile ? 8 : 10 }
                 },
                 tooltip: {
                     backgroundColor: 'rgba(15, 15, 30, 0.95)',
@@ -546,6 +548,28 @@ var observer = new IntersectionObserver(function(entries) {
 document.querySelectorAll('.test-card, .objective-item, .improvement-item, .team-card, .kpi-card, .chart-container, .validation-card').forEach(function(el) {
     el.classList.add('animate-in');
     observer.observe(el);
+});
+
+// ============================================================
+// RESPONSIVE CHART REBUILD ON RESIZE
+// ============================================================
+var resizeTimer;
+window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function() {
+        var newMobile = window.innerWidth <= 480;
+        if (newMobile !== isMobile) {
+            isMobile = newMobile;
+            // Rebuild default options with new sizes
+            defaultOptions.plugins.legend.labels.font.size = isMobile ? 10 : 12;
+            defaultOptions.plugins.legend.labels.padding = isMobile ? 10 : 20;
+            defaultOptions.plugins.legend.labels.pointStyleWidth = isMobile ? 8 : 10;
+            defaultOptions.scales.x.ticks.font.size = isMobile ? 9 : 11;
+            defaultOptions.scales.x.ticks.maxRotation = isMobile ? 45 : 0;
+            defaultOptions.scales.y.ticks.font.size = isMobile ? 9 : 11;
+            updateDashboard(currentMonths);
+        }
+    }, 250);
 });
 
 // ============================================================
