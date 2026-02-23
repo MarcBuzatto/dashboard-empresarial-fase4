@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fase 4 – Testes e Validação | Dashboard Empresarial</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ========== NAVIGATION ========== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="brand-text">Dashboard Empresarial</span>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero">Início</a></li>
+                <li><a href="#metodologia">Metodologia</a></li>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#verificacao">Verificação</a></li>
+                <li><a href="#melhorias">Melhorias</a></li>
+                <li><a href="#validacao">Validação</a></li>
+                <li><a href="#equipe">Equipe</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <header class="hero" id="hero">
+        <div class="hero-bg-effects">
+            <div class="hero-orb hero-orb-1"></div>
+            <div class="hero-orb hero-orb-2"></div>
+            <div class="hero-orb hero-orb-3"></div>
+        </div>
+        <div class="container hero-content">
+            <div class="hero-badge">Microprojeto 7 — IA aplicada ao BI</div>
+            <h1 class="hero-title">Fase 4<span class="hero-title-accent"> Testes e Validação</span></h1>
+            <p class="hero-subtitle">Dashboard de Performance Comparativa — Validação da solução gerencial com testes de precisão, usabilidade e verificação dos objetivos definidos na Fase 2.</p>
+            <div class="hero-meta">
+                <div class="hero-meta-item">
+                    <span class="meta-label">Instituição</span>
+                    <span class="meta-value">Senac Lapa Tito</span>
+                </div>
+                <div class="hero-meta-item">
+                    <span class="meta-label">Formação</span>
+                    <span class="meta-value">IA aplicada ao BI</span>
+                </div>
+                <div class="hero-meta-item">
+                    <span class="meta-label">Status</span>
+                    <span class="meta-value status-active">Fase 4 Concluída</span>
+                </div>
+            </div>
+            <a href="#dashboard" class="hero-cta">Ver Dashboard <span>→</span></a>
+        </div>
+    </header>
+
+    <!-- ========== SEÇÃO 4.1 - METODOLOGIA DE TESTES ========== -->
+    <section class="section" id="metodologia">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">4.1</span>
+                <h2 class="section-title">Metodologia de Testes</h2>
+                <p class="section-desc">Processo estruturado para garantir que o dashboard atende aos requisitos definidos na Fase 2.</p>
+            </div>
+
+            <div class="test-grid">
+                <div class="test-card">
+                    <span class="test-card-number">01</span>
+                    <h3>Precisao dos Dados</h3>
+                    <p>Verificacao cruzada dos calculos de KPIs com dados de controle. A formula V% foi validada contra calculos manuais em planilha.</p>
+                    <div class="test-result pass">
+                        <span class="result-dot"></span>
+                        Aprovado — 100% de precisao
+                    </div>
+                </div>
+
+                <div class="test-card">
+                    <span class="test-card-number">02</span>
+                    <h3>Responsividade</h3>
+                    <p>Interface testada em dispositivos moveis (375px), tablets (768px) e desktops (1280px+). Layout adapta-se em todas as resolucoes.</p>
+                    <div class="test-result pass">
+                        <span class="result-dot"></span>
+                        Aprovado — 3 breakpoints validados
+                    </div>
+                </div>
+
+                <div class="test-card">
+                    <span class="test-card-number">03</span>
+                    <h3>Performance</h3>
+                    <p>Tempo de carregamento medido em diferentes conexoes. Os graficos renderizam em menos de 2 segundos mesmo em conexoes lentas.</p>
+                    <div class="test-result pass">
+                        <span class="result-dot"></span>
+                        Aprovado — Carregamento &lt; 2s
+                    </div>
+                </div>
+
+                <div class="test-card">
+                    <span class="test-card-number">04</span>
+                    <h3>Usabilidade</h3>
+                    <p>Avaliacao da legibilidade visual, hierarquia de informacoes e facilidade de interpretacao dos KPIs por gestores sem conhecimento tecnico.</p>
+                    <div class="test-result pass">
+                        <span class="result-dot"></span>
+                        Aprovado — Interface intuitiva
+                    </div>
+                </div>
+
+                <div class="test-card">
+                    <span class="test-card-number">05</span>
+                    <h3>Interatividade</h3>
+                    <p>Funcionalidades interativas testadas: filtros de periodo, tooltips dos graficos, alternancia entre visualizacoes e atualizacao dinamica.</p>
+                    <div class="test-result pass">
+                        <span class="result-dot"></span>
+                        Aprovado — Controles funcionais
+                    </div>
+                </div>
+
+                <div class="test-card">
+                    <span class="test-card-number">06</span>
+                    <h3>Consistencia Visual</h3>
+                    <p>Verificacao da padronizacao de cores, tipografia e espacamento. Alertas visuais comunicam corretamente status de performance.</p>
+                    <div class="test-result pass">
+                        <span class="result-dot"></span>
+                        Aprovado — Design consistente
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SEÇÃO 4.2 - DASHBOARD INTERATIVO ========== -->
+    <section class="section section-dark" id="dashboard">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">4.2</span>
+                <h2 class="section-title">Dashboard de Performance Comparativa</h2>
+                <p class="section-desc">Painel gerencial interativo com indicadores-chave, análise de tendências de 12 meses e alertas visuais de performance.</p>
+            </div>
+
+            <!-- Dashboard Controls -->
+            <div class="dash-controls">
+                <div class="dash-control-group">
+                    <label>Período:</label>
+                    <select id="periodFilter">
+                        <option value="12">Últimos 12 meses</option>
+                        <option value="6">Últimos 6 meses</option>
+                        <option value="3">Últimos 3 meses</option>
+                    </select>
+                </div>
+                <div class="dash-control-group">
+                    <label>Visualização:</label>
+                    <div class="view-toggle">
+                        <button class="view-btn active" data-view="cards">KPIs</button>
+                        <button class="view-btn" data-view="table">Tabela</button>
+                    </div>
+                </div>
+                <div class="formula-badge">
+                    <span class="formula-label">Fórmula aplicada:</span>
+                    <code>V% = ((Atual - Anterior) / Anterior) × 100</code>
+                </div>
+            </div>
+
+            <!-- KPI Cards -->
+            <div class="kpi-grid" id="kpiCards">
+                <!-- Generated by JS -->
+            </div>
+
+            <!-- Charts -->
+            <div class="charts-grid">
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3>Evolução da Receita vs. Custos</h3>
+                        <span class="chart-badge">12 meses</span>
+                    </div>
+                    <canvas id="revenueChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3>Margem de Lucro (%)</h3>
+                        <span class="chart-badge">Tendência</span>
+                    </div>
+                    <canvas id="marginChart"></canvas>
+                </div>
+            </div>
+
+            <div class="charts-grid">
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3>Variação Mensal dos KPIs (%)</h3>
+                        <span class="chart-badge">V% aplicado</span>
+                    </div>
+                    <canvas id="variationChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3>Distribuição de Custos</h3>
+                        <span class="chart-badge">Atual</span>
+                    </div>
+                    <canvas id="costsChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Data Table (hidden by default) -->
+            <div class="data-table-wrapper" id="dataTable" style="display:none;">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Mês</th>
+                            <th>Receita (R$)</th>
+                            <th>Custos (R$)</th>
+                            <th>Lucro (R$)</th>
+                            <th>Margem (%)</th>
+                            <th>Ticket Médio (R$)</th>
+                            <th>Clientes</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <!-- Generated by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SEÇÃO 4.3 - VERIFICAÇÃO DOS OBJETIVOS ========== -->
+    <section class="section" id="verificacao">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">4.3</span>
+                <h2 class="section-title">Verificação dos Objetivos</h2>
+                <p class="section-desc">Checklist de conformidade com os requisitos estabelecidos na Fase 2 — Definição do Escopo e Planejamento.</p>
+            </div>
+
+            <div class="objectives-list">
+                <div class="objective-item checked">
+                    <div class="obj-check">✓</div>
+                    <div class="obj-content">
+                        <h4>Transformar dados brutos em indicadores de decisão</h4>
+                        <p>Os dados de 12 meses foram processados e transformados em 6 KPIs gerenciais com cálculos automáticos de variação percentual, eliminando métricas sem valor prático.</p>
+                    </div>
+                </div>
+
+                <div class="objective-item checked">
+                    <div class="obj-check">✓</div>
+                    <div class="obj-content">
+                        <h4>Visualização de tendências e variações de desempenho</h4>
+                        <p>Gráficos de linha e barras mostram a evolução temporal dos indicadores, permitindo identificar padrões de crescimento e queda ao longo do período analisado.</p>
+                    </div>
+                </div>
+
+                <div class="objective-item checked">
+                    <div class="obj-check">✓</div>
+                    <div class="obj-content">
+                        <h4>Painel interativo para setor específico</h4>
+                        <p>O dashboard permite filtrar por período (3, 6 ou 12 meses) e alternar entre visualização em cards e tabela, adaptando-se às necessidades do gestor.</p>
+                    </div>
+                </div>
+
+                <div class="objective-item checked">
+                    <div class="obj-check">✓</div>
+                    <div class="obj-content">
+                        <h4>Histórico de 12 meses para análise de tendências</h4>
+                        <p>Base de dados estruturada com 12 meses completos, conforme requisitado no levantamento de requisitos da Fase 2.</p>
+                    </div>
+                </div>
+
+                <div class="objective-item checked">
+                    <div class="obj-check">✓</div>
+                    <div class="obj-content">
+                        <h4>Definição clara de metas para cada indicador</h4>
+                        <p>Cada KPI possui uma meta definida e alertas visuais (verde para acima da meta, vermelho para abaixo) que comunicam instantaneamente o status de performance.</p>
+                    </div>
+                </div>
+
+                <div class="objective-item checked">
+                    <div class="obj-check">✓</div>
+                    <div class="obj-content">
+                        <h4>Design da interface visual com foco em decisão rápida</h4>
+                        <p>Interface com hierarquia visual clara, permitindo que gestores identifiquem rapidamente indicadores críticos sem necessidade de análise técnica aprofundada.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="objectives-summary">
+                <div class="summary-stat">
+                    <span class="summary-number">6/6</span>
+                    <span class="summary-label">Objetivos Atingidos</span>
+                </div>
+                <div class="summary-stat">
+                    <span class="summary-number">100%</span>
+                    <span class="summary-label">Taxa de Conformidade</span>
+                </div>
+                <div class="summary-stat">
+                    <span class="summary-number">6</span>
+                    <span class="summary-label">Testes Realizados</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SEÇÃO 4.4 - CORREÇÕES E MELHORIAS ========== -->
+    <section class="section section-dark" id="melhorias">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">4.4</span>
+                <h2 class="section-title">Correções e Melhorias</h2>
+                <p class="section-desc">Ajustes identificados durante os testes e implementados para aprimorar a solução final.</p>
+            </div>
+
+            <div class="improvements-timeline">
+                <div class="improvement-item">
+                    <div class="imp-icon imp-fix">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                    </div>
+                    <div class="imp-content">
+                        <span class="imp-tag tag-fix">Correcao</span>
+                        <h4>Ajuste na formula de variacao percentual</h4>
+                        <p>Identificado que a divisao por zero ocorria quando o valor anterior era nulo. Adicionada validacao para exibir "N/A" nesses casos.</p>
+                    </div>
+                </div>
+
+                <div class="improvement-item">
+                    <div class="imp-icon imp-improve">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/></svg>
+                    </div>
+                    <div class="imp-content">
+                        <span class="imp-tag tag-improve">Melhoria</span>
+                        <h4>Adicao de tooltips nos graficos</h4>
+                        <p>Implementados tooltips interativos que exibem valores exatos ao passar o mouse sobre os pontos dos graficos.</p>
+                    </div>
+                </div>
+
+                <div class="improvement-item">
+                    <div class="imp-icon imp-improve">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/></svg>
+                    </div>
+                    <div class="imp-content">
+                        <span class="imp-tag tag-improve">Melhoria</span>
+                        <h4>Indicadores visuais de meta</h4>
+                        <p>Adicionados indicadores de cor nos cards de KPI para sinalizar instantaneamente se o indicador esta acima ou abaixo da meta.</p>
+                    </div>
+                </div>
+
+                <div class="improvement-item">
+                    <div class="imp-icon imp-fix">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                    </div>
+                    <div class="imp-content">
+                        <span class="imp-tag tag-fix">Correcao</span>
+                        <h4>Responsividade da tabela de dados</h4>
+                        <p>Corrigido overflow horizontal da tabela em dispositivos moveis, implementando scroll lateral com indicador visual.</p>
+                    </div>
+                </div>
+
+                <div class="improvement-item">
+                    <div class="imp-icon imp-improve">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/></svg>
+                    </div>
+                    <div class="imp-content">
+                        <span class="imp-tag tag-improve">Melhoria</span>
+                        <h4>Filtro de periodo dinamico</h4>
+                        <p>Funcionalidade de filtro que atualiza todos os graficos e KPIs simultaneamente ao alterar o periodo de analise.</p>
+                    </div>
+                </div>
+
+                <div class="improvement-item">
+                    <div class="imp-icon imp-improve">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/></svg>
+                    </div>
+                    <div class="imp-content">
+                        <span class="imp-tag tag-improve">Melhoria</span>
+                        <h4>Grafico de distribuicao de custos</h4>
+                        <p>Adicionado grafico de rosca para visualizacao da composicao dos custos operacionais.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SEÇÃO 4.5 - VALIDAÇÃO FINAL ========== -->
+    <section class="section" id="validacao">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">4.5</span>
+                <h2 class="section-title">Validação Final</h2>
+                <p class="section-desc">Resultado consolidado da validação com critérios de aceite para aprovação da solução.</p>
+            </div>
+
+            <div class="validation-grid">
+                <div class="validation-card">
+                    <div class="val-header">
+                        <h4>Critérios de Aceite</h4>
+                    </div>
+                    <div class="val-criteria">
+                        <div class="criteria-item pass">
+                            <span class="criteria-check">✓</span>
+                            <span>Dashboard exibe pelo menos 5 KPIs relevantes</span>
+                        </div>
+                        <div class="criteria-item pass">
+                            <span class="criteria-check">✓</span>
+                            <span>Dados de 12 meses disponíveis para análise</span>
+                        </div>
+                        <div class="criteria-item pass">
+                            <span class="criteria-check">✓</span>
+                            <span>Fórmula V% aplicada corretamente</span>
+                        </div>
+                        <div class="criteria-item pass">
+                            <span class="criteria-check">✓</span>
+                            <span>Gráficos interativos e legíveis</span>
+                        </div>
+                        <div class="criteria-item pass">
+                            <span class="criteria-check">✓</span>
+                            <span>Interface responsiva (mobile, tablet, desktop)</span>
+                        </div>
+                        <div class="criteria-item pass">
+                            <span class="criteria-check">✓</span>
+                            <span>Alertas visuais de performance implementados</span>
+                        </div>
+                        <div class="criteria-item pass">
+                            <span class="criteria-check">✓</span>
+                            <span>Filtros de período funcionais</span>
+                        </div>
+                        <div class="criteria-item pass">
+                            <span class="criteria-check">✓</span>
+                            <span>Metas definidas para cada indicador</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="validation-card">
+                    <div class="val-header">
+                        <h4>Resultado da Validação</h4>
+                    </div>
+                    <div class="val-result">
+                        <div class="val-score">
+                            <div class="score-circle">
+                                <svg viewBox="0 0 100 100">
+                                    <circle cx="50" cy="50" r="45" class="score-bg"/>
+                                    <circle cx="50" cy="50" r="45" class="score-fill" style="stroke-dasharray: 283; stroke-dashoffset: 0;"/>
+                                </svg>
+                                <span class="score-text">100%</span>
+                            </div>
+                            <p class="score-label">Critérios Atendidos</p>
+                        </div>
+                        <div class="val-verdict">
+                            <span class="verdict-badge approved">APROVADO</span>
+                            <p>A solução atende integralmente aos requisitos definidos na Fase 2 e está apta para apresentação final na Fase 5.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="validation-conclusion">
+                <blockquote>
+                    "Um número isolado não diz nada. Sem metas comparativas, o KPI perde o sentido."
+                </blockquote>
+                <p>O dashboard desenvolvido transforma dados brutos em inteligência gerencial acionável, cumprindo o propósito central do Microprojeto 7. A lógica comparativa implementada permite que gestores tomem decisões fundamentadas em variações reais de performance.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== EQUIPE ========== -->
+    <section class="section section-dark" id="equipe">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">Equipe</span>
+                <h2 class="section-title">Equipe do Projeto</h2>
+                <p class="section-desc">Responsáveis pela execução do Microprojeto 7 — Dashboard Empresarial.</p>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">YG</div>
+                    <h4>Yan Guilherme</h4>
+                    <span class="team-role">Design e Dashboard</span>
+                    <p>Responsável pela interface visual e construção do painel interativo.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">BN</div>
+                    <h4>Bruno Neiva</h4>
+                    <span class="team-role">Coleta de Dados</span>
+                    <p>Responsável pela estruturação e organização da base de dados.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">MB</div>
+                    <h4>Marc Buzatto</h4>
+                    <span class="team-role">Análise e Interpretação</span>
+                    <p>Responsável pela definição dos KPIs e análise dos indicadores.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">JS</div>
+                    <h4>João P. Sandi</h4>
+                    <span class="team-role">Apresentação</span>
+                    <p>Responsável pela organização e apresentação dos resultados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <p>Microprojeto 7 — Dashboard Empresarial | Senac Lapa Tito — MED 24</p>
+            <p class="footer-sub">Fase 4 — Testes e Validação | IA aplicada ao BI</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
