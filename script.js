@@ -204,6 +204,10 @@ function createRevenueChart(months) {
 
     if (charts.revenue) charts.revenue.destroy();
 
+    var mPr = isMobile ? 2 : 4;
+    var mPrH = isMobile ? 5 : 7;
+    var mBw = isMobile ? 2 : 2.5;
+
     charts.revenue = new Chart(ctx, {
         type: 'line',
         data: {
@@ -214,26 +218,27 @@ function createRevenueChart(months) {
                     data: receita,
                     borderColor: chartColors.primary,
                     backgroundColor: chartColors.primaryLight,
-                    fill: true, tension: 0.4, pointRadius: 4, pointHoverRadius: 7, borderWidth: 2.5
+                    fill: true, tension: 0.4, pointRadius: mPr, pointHoverRadius: mPrH, borderWidth: mBw
                 },
                 {
                     label: 'Custos',
                     data: custos,
                     borderColor: chartColors.secondary,
                     backgroundColor: chartColors.secondaryLight,
-                    fill: true, tension: 0.4, pointRadius: 4, pointHoverRadius: 7, borderWidth: 2.5
+                    fill: true, tension: 0.4, pointRadius: mPr, pointHoverRadius: mPrH, borderWidth: mBw
                 },
                 {
                     label: 'Lucro',
                     data: lucro,
                     borderColor: chartColors.success,
                     backgroundColor: chartColors.successLight,
-                    fill: true, tension: 0.4, pointRadius: 4, pointHoverRadius: 7, borderWidth: 2.5
+                    fill: true, tension: 0.4, pointRadius: mPr, pointHoverRadius: mPrH, borderWidth: mBw
                 }
             ]
         },
         options: {
             responsive: true, maintainAspectRatio: false,
+            layout: { padding: isMobile ? { left: 0, right: 4, top: 0, bottom: 0 } : {} },
             plugins: {
                 legend: defaultOptions.plugins.legend,
                 tooltip: {
@@ -253,8 +258,8 @@ function createRevenueChart(months) {
                     grid: { color: chartColors.grid },
                     ticks: {
                         color: chartColors.text,
-                        font: { family: 'Inter', size: 11 },
-                        callback: function(v) { return 'R$ ' + (v / 1000) + 'k'; }
+                        font: { family: 'Inter', size: isMobile ? 9 : 11 },
+                        callback: function(v) { return isMobile ? (v / 1000) + 'k' : 'R$ ' + (v / 1000) + 'k'; }
                     }
                 }
             }
@@ -285,20 +290,21 @@ function createMarginChart(months) {
                     data: margem,
                     backgroundColor: margem.map(function(v) { return v >= 38 ? 'rgba(16, 185, 129, 0.7)' : 'rgba(244, 63, 94, 0.7)'; }),
                     borderColor: margem.map(function(v) { return v >= 38 ? '#10b981' : '#f43f5e'; }),
-                    borderWidth: 1.5, borderRadius: 6, barPercentage: 0.6
+                    borderWidth: 1.5, borderRadius: isMobile ? 4 : 6, barPercentage: isMobile ? 0.7 : 0.6
                 },
                 {
-                    label: 'M\u00e9dia M\u00f3vel (3m)',
+                    label: 'Mdia Mvel (3m)',
                     data: movingAvg,
                     type: 'line',
                     borderColor: chartColors.warning,
                     backgroundColor: 'transparent',
-                    tension: 0.4, pointRadius: 3, pointHoverRadius: 6, borderWidth: 2, borderDash: [5, 5]
+                    tension: 0.4, pointRadius: isMobile ? 2 : 3, pointHoverRadius: isMobile ? 4 : 6, borderWidth: 2, borderDash: [5, 5]
                 }
             ]
         },
         options: {
             responsive: true, maintainAspectRatio: false,
+            layout: { padding: isMobile ? { left: 0, right: 4, top: 0, bottom: 0 } : {} },
             plugins: {
                 legend: defaultOptions.plugins.legend,
                 tooltip: {
@@ -312,7 +318,7 @@ function createMarginChart(months) {
                 x: defaultOptions.scales.x,
                 y: {
                     grid: { color: chartColors.grid },
-                    ticks: { color: chartColors.text, font: { family: 'Inter', size: 11 }, callback: function(v) { return v + '%'; } },
+                    ticks: { color: chartColors.text, font: { family: 'Inter', size: isMobile ? 9 : 11 }, callback: function(v) { return v + '%'; } },
                     min: 30, max: 45
                 }
             }
@@ -336,18 +342,22 @@ function createVariationChart(months) {
 
     if (charts.variation) charts.variation.destroy();
 
+    var vBp = isMobile ? 0.9 : 0.8;
+    var vCp = isMobile ? 0.8 : 0.7;
+
     charts.variation = new Chart(ctx, {
         type: 'bar',
         data: {
             labels: labels,
             datasets: [
-                { label: 'Receita V%', data: receitaVar, backgroundColor: 'rgba(99, 102, 241, 0.7)', borderColor: '#6366f1', borderWidth: 1, borderRadius: 4, barPercentage: 0.8, categoryPercentage: 0.7 },
-                { label: 'Lucro V%', data: lucroVar, backgroundColor: 'rgba(16, 185, 129, 0.7)', borderColor: '#10b981', borderWidth: 1, borderRadius: 4, barPercentage: 0.8, categoryPercentage: 0.7 },
-                { label: 'Clientes V%', data: clientesVar, backgroundColor: 'rgba(245, 158, 11, 0.7)', borderColor: '#f59e0b', borderWidth: 1, borderRadius: 4, barPercentage: 0.8, categoryPercentage: 0.7 }
+                { label: 'Receita V%', data: receitaVar, backgroundColor: 'rgba(99, 102, 241, 0.7)', borderColor: '#6366f1', borderWidth: 1, borderRadius: isMobile ? 2 : 4, barPercentage: vBp, categoryPercentage: vCp },
+                { label: 'Lucro V%', data: lucroVar, backgroundColor: 'rgba(16, 185, 129, 0.7)', borderColor: '#10b981', borderWidth: 1, borderRadius: isMobile ? 2 : 4, barPercentage: vBp, categoryPercentage: vCp },
+                { label: 'Clientes V%', data: clientesVar, backgroundColor: 'rgba(245, 158, 11, 0.7)', borderColor: '#f59e0b', borderWidth: 1, borderRadius: isMobile ? 2 : 4, barPercentage: vBp, categoryPercentage: vCp }
             ]
         },
         options: {
             responsive: true, maintainAspectRatio: false,
+            layout: { padding: isMobile ? { left: 0, right: 4, top: 0, bottom: 0 } : {} },
             plugins: {
                 legend: defaultOptions.plugins.legend,
                 tooltip: {
@@ -361,7 +371,7 @@ function createVariationChart(months) {
                 x: defaultOptions.scales.x,
                 y: {
                     grid: { color: chartColors.grid },
-                    ticks: { color: chartColors.text, font: { family: 'Inter', size: 11 }, callback: function(v) { return (v > 0 ? '+' : '') + v + '%'; } }
+                    ticks: { color: chartColors.text, font: { family: 'Inter', size: isMobile ? 9 : 11 }, callback: function(v) { return (v > 0 ? '+' : '') + v + '%'; } }
                 }
             }
         }
@@ -387,7 +397,7 @@ function createCostsChart() {
             }]
         },
         options: {
-            responsive: true, maintainAspectRatio: false, cutout: '65%',
+            responsive: true, maintainAspectRatio: false, cutout: isMobile ? '55%' : '65%',
             plugins: {
                 legend: {
                     position: isMobile ? 'bottom' : 'right',
