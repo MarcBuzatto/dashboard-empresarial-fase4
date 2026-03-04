@@ -555,7 +555,7 @@ var observer = new IntersectionObserver(function(entries) {
     });
 }, observerOptions);
 
-document.querySelectorAll('.test-card, .objective-item, .improvement-item, .team-card, .kpi-card, .chart-container, .validation-card').forEach(function(el) {
+document.querySelectorAll('.test-card, .objective-item, .improvement-item, .team-card, .kpi-card, .chart-container, .validation-card, .deliverable-item, .reflection-card').forEach(function(el) {
     el.classList.add('animate-in');
     observer.observe(el);
 });
